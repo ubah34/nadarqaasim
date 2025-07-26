@@ -1,84 +1,89 @@
 *{
-   border: 0; 
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+    border: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
 body{
-    position:relative;
+    background-color: wheat;
+}
+.continer{
+    border: 0;
+    outline: none;
+    width: 70%;
+    max-width: 470px;
+    background: linear-gradient(135deg, lightblue , blue);
+    color: white;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+    border-radius: 20px;
+    text-align: center;
 
 }
-nav{
-    background-color: rgb(7,53,37);
-    box-shadow: 4px  7px 4px rgba(0,0,0,0,);
-}
-.navbar{
+.search{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 2.2rem 0;
-}
-.navbar .logo{
-    color: #fff;
-    text-decoration: none;
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-
+    justify-content: space-between;
+    width: 100%;
 
 }
-#search-input{
-    max-width: 480px;
-    padding: 10px 20px;
+.search input{
     border: 0;
     outline: 0;
-    border-radius: 5px;
-    color: #141414;
+    background: #ebfffe;
+    color: #222;
+    padding: 20px 25px;
+    margin-right: 16px;
+    border-radius: 30px;
+    flex: 1;
     font-size: 18px;
-
-
-
+    height: 60px;
 }
-#search-button{
-    color: #fff;
-    background-color: rgb(13,133,93);
-    border-radius: 5px;
+.search button{
+    height: 60px;
+    width: 60px;
+    background: #ebfffe;
     cursor: pointer;
-    margin: 10px;
-    padding: 10px  20px;
-}
-.obj-width{
-    max-width: 1200px;
-    margin: auto;
-}
-#blog-container{
-    padding: 3rem 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-   flex-wrap: wrap;
-}
-.blog-card{
-    width: 280px;
-    border: 1px solid #141414;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-    padding: 1rem;
+    border-radius: 50%;
 
 }
-.blog-card img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
+
+.search img{
+
+    width: 20px;
+
 }
-.blog-card h2{
-    font-size: 1.7rem;
+.weather-icon{
+    width: 170px;
+    margin-top: 30px;
+}
+.weather h1{
+    font-size:60px ;
+    font-weight: 600;
+   
+
+
+}
+.weather h2{
+    font-size:45px ;
     font-weight: 500;
-    color: #141414;
-    margin-bottom: 10px;
+    margin-top: 8px;
+
+
 }
-.blog-card p{
-    font-size: 1.2rem;
-    padding-bottom: 0.7rem;
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
 }
+.col{
+    display: flex;
+    align-items: left ;
+}
+.humidity{
+    font-size: 16px;
+    margin-top: 6px;
+}
+

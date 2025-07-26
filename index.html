@@ -1,76 +1,68 @@
-<!doctype html>
+<!Docytype html>
 <html>
-<head>
-        <title>news blog</title>
-        <meta name ="veiwport" content="devic-width initial -scale = 1.0">
-        <link href="style.css" rel="stylesheet">
+    <head>
+        <met charset ="utf-8"></met>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class ="continer">
+        <div class = "search"> 
+            <input  type = "text"  spellcheck="false"  placeholder=" City Name"  required>
+            <button>
+                <img src="search.png">
+            </button>
+        </div>
+        <div class="weather">
+            <img src="clear.png">
+            <h1 class="temp">22°C</h1>
+            <h2>Garoowe</h2>
+            <div class="details">
+                <div class ="col">
+                    <img src="humidity.png">
+                   <div>
+                       <p class="humidity">34%</p>
+                       <p>Humidity</p>
+                   </div> 
 
- </head>
- <body>
-    <nav>
-        <div class="navbar">
-            <a href="index.html" class="logo">News.</a>
-        
-        <div>
-              <input type="text" placeholder= "Search News Here" required id="search-input">
-              <button id="search-button">Search</button>
-              
+                </div>
+                <div class ="col">
+                    <img src="wind.png">
+                   <div>
+                       <p class="wind">34% km/h</p>
+                       <p>Humidity</p>
+                   </div> 
+
+                </div>
+
             </div>
-       </div>
-    </nav>
-    <main id="blog-container" class="obj-width">
-        <div class="blog-card">
-            <img src="https://placehold.co/600x400" alt="image placeholder">
-            <h2>this is a title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elitomnis veniam quam non aut ipsam,
-                 dignissimos laudantium rem dolorum
-                  vero cumque sit, eaque fuga mollitia recusandae?</p>
 
         </div>
-         <div class="blog-card">
-            <img src="https://placehold.co/600x400" alt="image placeholder">
-            <h2>this is a title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elitomnis veniam quam non aut ipsam,
-                 dignissimos laudantium rem dolorum
-                  vero cumque sit, eaque fuga mollitia recusandae?</p>
+    </div>
+</body>
+<script>
+    const apiurl ="https://api.openweathermap.org/data/2.5/weather?q=garoowe"
+    const apikey ="4d052add7329a8f1093c42b5714fd28f";
+    const searchbox= document.queryselector(`search input`);
+    const searchbtn= document.queryselector(`search button`);
+    const searchicon= document.queryselector(`search_icon`);
+    async function checkweather(){
+        const response = await fetch (apiurl+ city +`&appid=${apikey}`);
+            var data = await response.json();
+            console.log(data)
+            if(response.status ==404){
+                document.queryselector(`.error`)().style.display="block";
+                document.queryselector(`.weather`)().style.display="none";
+                        }else{
+            document.queryselector('.temp').innerhtml=math.around.temp+"℃";
+            document.queryselector('.city').innerhtml=data.name;
+            document.queryselector('.wind').innerhtml=data.wind.speed+km/h;
+            document.queryselector('.humidity').innerhtml=data.main.humidity+"%";
 
-        </div> <div class="blog-card">
-            <img src="https://placehold.co/600x400" alt="image placeholder">
-            <h2>this is a title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elitomnis veniam quam non aut ipsam,
-                 dignissimos laudantium rem dolorum
-                  vero cumque sit, eaque fuga mollitia recusandae?</p>
+            document.queryselector(`.error`)
 
-        </div>
-        <div class="blog-card">
-            <img src="https://placehold.co/600x400" alt="image placeholder">
-            <h2>this is a title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elitomnis veniam quam non aut ipsam,
-                 dignissimos laudantium rem dolorum
-                  vero cumque sit, eaque fuga mollitia recusandae?</p>
-
-        </div><div class="blog-card">
-            <img src="https://placehold.co/600x400" alt="image placeholder">
-            <h2>this is a title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elitomnis veniam quam non aut ipsam,
-                 dignissimos laudantium rem dolorum
-                  vero cumque sit, eaque fuga mollitia recusandae?</p>
-
-        </div><div class="blog-card">
-            <img src="https://placehold.co/600x400" alt="image placeholder">
-            <h2>this is a title</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, 
-                adipisicing elitomnis veniam quam non aut ipsam,
-                 dignissimos laudantium rem dolorum
-                  vero cumque sit, eaque fuga mollitia recusandae?</p>
-
-        </div>
-        </main>
- </body>
-
+    }
+    searchbtn.addventlistener("click",()=>)
+    
+</script>
+    
 </html>
